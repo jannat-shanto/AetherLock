@@ -31,6 +31,7 @@ For each character at position `i` (0-indexed):
 
 ### Files
 - `primeshift.cpp`: Main implementation file
+- `pseudocode.txt`: Working method
 - `README.md`: This documentation file
 
 ### How to Compile and Run
