@@ -1,54 +1,62 @@
-# PrimeShift_Cipher
 
-
-# PrimeShift Cipher - A Novel Cryptographic Algorithm
+````
+# AetherLock Cipher - A Novel Cryptographic Algorithm  
+*Securing data in the digital aether with prime shifts*
 
 ![Cryptography](https://img.shields.io/badge/Algorithm-Cryptography-blue)
 ![C++](https://img.shields.io/badge/Language-C++-green)
 
 ## Overview
 
-PrimeShift Cipher is an original symmetric-key cryptographic algorithm designed for the Mathematical Analysis for Computer Science course (CSE 361). The algorithm employs prime number properties and positional shifting to transform plaintext into ciphertext and vice versa.
+**AetherLock Cipher** is an original symmetric-key cryptographic algorithm designed for the *Mathematical Analysis for Computer Science* course (CSE 361). The algorithm introduces a lightweight encryption technique using prime number-based shifting and modular arithmetic, providing a balance of simplicity and cryptographic strength for academic or experimental purposes.
 
-## Algorithm Description
+## Features
 
-### Key Features
-- **Symmetric-key algorithm** (same key for encryption and decryption)
-- **Prime number-based shifting** for enhanced security
-- **Position-dependent transformations** where each character's shift depends on its position
-- **Modular arithmetic** to ensure valid character outputs
+- 🔐 **Symmetric-key algorithm** — Same key for encryption and decryption  
+- 🧮 **Prime-based shifting** — The encryption shift depends on a prime number and character position  
+- 🧠 **Position-aware transformation** — Adds complexity to pattern detection  
+- 📏 **Modular arithmetic** — Ensures output characters are valid byte values (0–255)  
 
-### Mathematical Foundation
+## Mathematical Foundation
+
 For each character at position `i` (0-indexed):
-- **Encryption**: `cipher_char = (plain_char + key*(i+1)) mod 256`
-- **Decryption**: `plain_char = (cipher_char - key*(i+1)) mod 256`
 
-## Implementation
+- **Encryption**:  
+  `cipher_char = (plain_char + key × (i + 1)) mod 256`
 
-### Requirements
-- C++11 or later
-- Standard Library
+- **Decryption**:  
+  `plain_char = (cipher_char - key × (i + 1)) mod 256`
 
-### Files
-- `primeshift.cpp`: Main implementation file
-- `pseudocode.txt`: Working method
-- `README.md`: This documentation file
+Here, `key` must be a **prime number**.
 
-### How to Compile and Run
-bash
-g++ primeshift.cpp -o primeshift
-./primeshift
+## File Structure
 
+| File Name       | Description                                 |
+|----------------|---------------------------------------------|
+| `aetherlock.cpp` | Main source code implementing the algorithm |
+| `pseudocode.txt` | Algorithm logic in pseudocode form          |
+| `README.md`      | Project documentation (this file)           |
 
-## Usage Example
+## Compilation & Execution
+
+Make sure you have **g++** and **C++11** or later installed.
+
+```bash
+g++ aetherlock.cpp -o aetherlock
+./aetherlock
+````
+
+## Usage Instructions
 
 1. Run the program
 2. Enter your plaintext message
-3. Enter a prime number as the encryption key
+3. Provide a **prime number** as the key
 
-Sample Output:
+### Sample Output
 
-PrimeShift Cipher Implementation in C++
+```
+AetherLock Cipher Implementation in C++
+Securing data in the digital aether with prime shifts
 =====================================
 
 Enter plaintext: SecureMessage123
@@ -64,47 +72,50 @@ Decrypted text: SecureMessage123
 
 Verification:
 Success! Original and decrypted texts match.
-
+```
 
 ## Test Cases
 
-| Plaintext         | Key | Ciphertext       |
-|-------------------|-----|------------------|
-| "HelloWorld"      | 5   | "Mjqqt[twqi"     |
-| "CSE361"          | 11  | "D_J:<<"         |
-| "Cryptography"    | 7   | "Jzÿüôîüêîàä"    |
+| Plaintext      | Key | Ciphertext    |
+| -------------- | --- | ------------- |
+| "HelloWorld"   | 5   | "Mjqqt\[twqi" |
+| "CSE361"       | 11  | "D\_J:<<"     |
+| "Cryptography" | 7   | "Jzÿüôîüêîàä" |
 
 ## Security Analysis
 
-### Strengths
-- Variable shifting based on character position increases complexity
-- Prime number key requirement reduces brute-force vulnerability
-- Simple yet effective transformation algorithm
+### ✅ Strengths
 
-### Limitations
-- Not suitable for production-grade security
-- Vulnerable to frequency analysis for longer texts
-- Symmetric key distribution challenge
+* **Dynamic shifts**: Each character is shifted by a unique amount
+* **Prime keys**: Prevent brute-force attacks based on uniform shifting
+* **Efficient**: Light-weight and fast encryption suitable for academic use
 
-## Future Enhancements
+### ⚠️ Limitations
 
-1. Implement hybrid encryption combining with asymmetric cryptography
-2. Add support for file encryption/decryption
-3. Develop a more complex key generation system
-4. Add authentication mechanisms
+* Not suitable for production or sensitive data
+* Vulnerable to **frequency analysis** for long messages
+* Requires **secure key exchange** (symmetric encryption issue)
+
+## Future Improvements
+
+* 🔒 Integrate with **asymmetric encryption** (e.g., RSA) for secure key exchange
+* 📁 Add support for **file encryption/decryption**
+* 🔑 Implement **stronger key scheduling** for dynamic keys
+* 🧾 Add **message integrity/authentication** features
 
 ## Author
 
-Jannatul Ferthaous
-
+**Jannatul Ferthaous**
 ID: 2102022
-
-Computer Science and Engineering  
-
-Hajee Mohammad Danesh Science and Technology University, Dinajpur-5200
+Department of Computer Science and Engineering
+Hajee Mohammad Danesh Science and Technology University
+Dinajpur-5200, Bangladesh
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+```
 
 
+```
