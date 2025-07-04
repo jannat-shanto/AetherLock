@@ -9,7 +9,7 @@ bool isPrime(int n) {
     if (n <= 1) return false;
     if (n <= 3) return true;
     if (n % 2 == 0 || n % 3 == 0) return false;
-    
+
     for (int i = 5; i * i <= n; i += 6) {
         if (n % i == 0 || n % (i + 2) == 0) {
             return false;
@@ -25,10 +25,10 @@ string encrypt(const string& plaintext, int key) {
         int ascii_val = static_cast<int>(plaintext[i]);
         int shift = key * (i + 1);
         int new_val = (ascii_val + shift) % 256;
-        
+
         // Handle negative values (though modulo 256 of positive should be positive)
         if (new_val < 0) new_val += 256;
-        
+
         ciphertext += static_cast<char>(new_val);
     }
     return ciphertext;
@@ -41,10 +41,10 @@ string decrypt(const string& ciphertext, int key) {
         int ascii_val = static_cast<int>(ciphertext[i]);
         int shift = key * (i + 1);
         int new_val = (ascii_val - shift) % 256;
-        
+
         // Handle negative values
         if (new_val < 0) new_val += 256;
-        
+
         plaintext += static_cast<char>(new_val);
     }
     return plaintext;
@@ -60,15 +60,16 @@ void displayASCII(const string& s) {
 }
 
 int main() {
-    cout << "PrimeShift Cipher Implementation in C++" << endl;
+    cout << "AetherLock Cipher Implementation in C++" << endl;
+    cout << "Securing data in the digital aether with prime shifts" << endl;
     cout << "=====================================" << endl << endl;
-    
+
     string plaintext;
     int key;
-    
+
     cout << "Enter plaintext: ";
     getline(cin, plaintext);
-    
+
     do {
         cout << "Enter a prime number as key: ";
         cin >> key;
@@ -76,7 +77,7 @@ int main() {
             cout << "Invalid key! Please enter a prime number." << endl;
         }
     } while (!isPrime(key));
-    
+
     // Encryption
     string ciphertext = encrypt(plaintext, key);
     cout << "\nEncryption Process:" << endl;
@@ -84,7 +85,7 @@ int main() {
     displayASCII(plaintext);
     cout << "Ciphertext: " << ciphertext << endl;
     displayASCII(ciphertext);
-    
+
     // Decryption
     string decrypted = decrypt(ciphertext, key);
     cout << "\nDecryption Process:" << endl;
@@ -92,7 +93,7 @@ int main() {
     displayASCII(ciphertext);
     cout << "Decrypted text: " << decrypted << endl;
     displayASCII(decrypted);
-    
+
     // Verification
     cout << "\nVerification:" << endl;
     if (plaintext == decrypted) {
@@ -100,6 +101,6 @@ int main() {
     } else {
         cout << "Error! Decryption failed." << endl;
     }
-    
+
     return 0;
 }
