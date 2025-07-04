@@ -1,5 +1,3 @@
-
-````
 # AetherLock Cipher - A Novel Cryptographic Algorithm  
 *Securing data in the digital aether with prime shifts*
 
@@ -31,8 +29,8 @@ Here, `key` must be a **prime number**.
 
 ## File Structure
 
-| File Name       | Description                                 |
-|----------------|---------------------------------------------|
+| File Name        | Description                                 |
+|------------------|---------------------------------------------|
 | `aetherlock.cpp` | Main source code implementing the algorithm |
 | `pseudocode.txt` | Algorithm logic in pseudocode form          |
 | `README.md`      | Project documentation (this file)           |
@@ -44,13 +42,13 @@ Make sure you have **g++** and **C++11** or later installed.
 ```bash
 g++ aetherlock.cpp -o aetherlock
 ./aetherlock
-````
+```
 
 ## Usage Instructions
 
-1. Run the program
-2. Enter your plaintext message
-3. Provide a **prime number** as the key
+1. Run the program  
+2. Enter your plaintext message  
+3. Provide a **prime number** as the key  
 
 ### Sample Output
 
@@ -77,45 +75,40 @@ Success! Original and decrypted texts match.
 ## Test Cases
 
 | Plaintext      | Key | Ciphertext    |
-| -------------- | --- | ------------- |
+|----------------|-----|---------------|
 | "HelloWorld"   | 5   | "Mjqqt\[twqi" |
-| "CSE361"       | 11  | "D\_J:<<"     |
-| "Cryptography" | 7   | "Jzÿüôîüêîàä" |
+| "CSE361"       | 11  | "D\\_J:<<"     |
+| "Cryptography" | 7   | "Jzÿüôîüêîàä"  |
 
 ## Security Analysis
 
 ### ✅ Strengths
 
-* **Dynamic shifts**: Each character is shifted by a unique amount
-* **Prime keys**: Prevent brute-force attacks based on uniform shifting
-* **Efficient**: Light-weight and fast encryption suitable for academic use
+- **Dynamic shifts**: Each character is shifted by a unique amount  
+- **Prime keys**: Prevent brute-force attacks based on uniform shifting  
+- **Efficient**: Light-weight and fast encryption suitable for academic use  
 
 ### ⚠️ Limitations
 
-* Not suitable for production or sensitive data
-* Vulnerable to **frequency analysis** for long messages
-* Requires **secure key exchange** (symmetric encryption issue)
+- Not suitable for production or sensitive data  
+- Vulnerable to **frequency analysis** for long messages  
+- Requires **secure key exchange** (symmetric encryption issue)  
 
 ## Future Improvements
 
-* 🔒 Integrate with **asymmetric encryption** (e.g., RSA) for secure key exchange
-* 📁 Add support for **file encryption/decryption**
-* 🔑 Implement **stronger key scheduling** for dynamic keys
-* 🧾 Add **message integrity/authentication** features
+- 🔒 Integrate with **asymmetric encryption** (e.g., RSA) for secure key exchange  
+- 📁 Add support for **file encryption/decryption**  
+- 🔑 Implement **stronger key scheduling** for dynamic keys  
+- 🧾 Add **message integrity/authentication** features  
 
 ## Author
 
-**Jannatul Ferthaous**
-ID: 2102022
-Department of Computer Science and Engineering
-Hajee Mohammad Danesh Science and Technology University
+**Jannatul Ferthaous**  
+ID: 2102022  
+Department of Computer Science and Engineering  
+Hajee Mohammad Danesh Science and Technology University  
 Dinajpur-5200, Bangladesh
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
-```
-
-
-```
