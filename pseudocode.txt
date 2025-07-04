@@ -1,4 +1,7 @@
-Algorithm: PrimeShift Cipher
+Algorithm: AetherLock Cipher
+
+Tagline:
+Securing data in the digital aether with prime shifts
 
 Input:
   plaintext: String to encrypt
@@ -12,24 +15,25 @@ Output:
 
 // Main function
 function main:
-  print "PrimeShift Cipher Implementation"
-  
+  print "AetherLock Cipher Implementation"
+  print "Securing data in the digital aether with prime shifts"
+
   plaintext = input("Enter plaintext: ")
-  
+
   while true:
     key = input("Enter a prime number as key: ")
     if isPrime(key):
       break
     else:
       print "Invalid key! Please enter a prime number."
-  
+
   ciphertext = encrypt(plaintext, key)
   decrypted = decrypt(ciphertext, key)
-  
+
   print "Original: " + plaintext
   print "Encrypted: " + ciphertext
   print "Decrypted: " + decrypted
-  
+
   if plaintext == decrypted:
     print "Success! Original and decrypted texts match."
   else:
@@ -43,45 +47,45 @@ function isPrime(n):
     return true
   if n mod 2 == 0 or n mod 3 == 0:
     return false
-  
+
   i = 5
   while i * i <= n:
     if n mod i == 0 or n mod (i + 2) == 0:
       return false
     i = i + 6
-  
+
   return true
 
 // Encryption algorithm
 function encrypt(plaintext, key):
   ciphertext = empty string
-  
+
   for i from 0 to length(plaintext) - 1:
     ascii_val = integer value of plaintext[i]
     shift = key * (i + 1)
     new_val = (ascii_val + shift) mod 256
-    
+
     // Ensure positive value
     if new_val < 0:
       new_val = new_val + 256
-    
+
     ciphertext = ciphertext + character with ASCII value new_val
-  
+
   return ciphertext
 
 // Decryption algorithm
 function decrypt(ciphertext, key):
   plaintext = empty string
-  
+
   for i from 0 to length(ciphertext) - 1:
     ascii_val = integer value of ciphertext[i]
     shift = key * (i + 1)
     new_val = (ascii_val - shift) mod 256
-    
+
     // Ensure positive value
     if new_val < 0:
       new_val = new_val + 256
-    
+
     plaintext = plaintext + character with ASCII value new_val
-  
+
   return plaintext
